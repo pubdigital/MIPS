@@ -5,25 +5,25 @@
 # License. See the file COPYING in the main directory of this archive for more
 # details.
 
-tool-prefix     = 
+tool-prefix	=
 
-CC              = $(tool-prefix)gcc
-LD              = $(toot-prefix)ld
-STRIP           = $(tool-prefix)strip
+CC		= $(tool-prefix)gcc
+LD		= $(toot-prefix)ld
+STRIP	= $(tool-prefix)strip
 
-CFLAGS          = -G0 -mno-abicalls -fno-pic
-LDFLAGS         = -N -s
+CFLAGS	= -G0 -mno-abicalls -fno-pic
+LDFLAGS	= -N -s
 
-all:            hola
+all:	hola
 
-hola:           hola.o
-                $(LD) $(LDFLAGS) -o hola hola.o
+hola:	hola.o
+		$(LD) $(LDFLAGS) -o hola hola.o
 
-hola.o:         hola.S
-                $(CC) $(CFLAGS) -c hola.S
+hola.o:	hola.S
+		$(CC) $(CFLAGS) -c hola.S
 
 clean:
-                rm -f core a.out *.o *.s
+		rm -f core a.out *.o *.s
 
-distclean:      clean
-                rm -f hola
+distclean:	clean
+		rm -f hola
